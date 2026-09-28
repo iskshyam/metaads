@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Meta Ads Academy: Beginner to Advanced</title>
+<style>
+:root{--bg:#f7f8fb;--card:#fff;--tx:#161a23;--mu:#5d6675;--ac:#2563eb;--ac2:#e0e9ff;--ok:#16a34a;--bd:#e3e7ee;--warn:#fff4d6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f131a;--card:#171c26;--tx:#eef1f6;--mu:#9aa5b6;--ac:#6b9bff;--ac2:#1e2b4a;--ok:#4ade80;--bd:#283042;--warn:#3a3116}}
+:root[data-theme="dark"]{--bg:#0f131a;--card:#171c26;--tx:#eef1f6;--mu:#9aa5b6;--ac:#6b9bff;--ac2:#1e2b4a;--ok:#4ade80;--bd:#283042;--warn:#3a3116}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.w{max-width:860px;margin:0 auto;padding:16px}
+h1{font-size:1.8rem;margin:.3em 0}h2{font-size:1.35rem;margin:0 0 .3em}h3{font-size:1rem;margin:1.2em 0 .4em;text-transform:uppercase;letter-spacing:.05em;color:var(--ac)}
+p{margin:.4em 0}.mu{color:var(--mu)}
+.hero{padding:12px 0}
+.nav{display:flex;gap:8px;overflow-x:auto;padding:8px 0;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.nav button{flex:0 0 auto;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 12px;border-radius:999px;cursor:pointer;font:inherit;font-size:.9rem}
+.nav button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.bar{height:8px;background:var(--bd);border-radius:9px;overflow:hidden;margin:6px 0}.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .3s}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;margin:14px 0}
+.tag{display:inline-block;background:var(--ac2);color:var(--ac);border-radius:6px;padding:2px 9px;font-size:.78rem;font-weight:600}
+ol.rt{padding-left:0;list-style:none;counter-reset:s}ol.rt li{counter-increment:s;padding:4px 0 4px 34px;position:relative}
+ol.rt li:before{content:counter(s);position:absolute;left:0;top:5px;width:24px;height:24px;border-radius:50%;background:var(--ac);color:#fff;text-align:center;font-size:.8rem;line-height:24px}
+.case{background:var(--warn)}
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:10px 0}
+.kp div{border:1px solid var(--bd);border-radius:10px;padding:10px;background:var(--card)}
+.kp b{display:block;font-size:1.25rem}.kp small{color:var(--mu)}.up{color:var(--ok)}
+.roas{position:relative;height:26px;background:var(--bd);border-radius:6px;margin:10px 0 2px}
+.roas i{position:absolute;left:0;top:0;height:100%;background:var(--ac);border-radius:6px;transition:width .4s}
+.roas u{position:absolute;top:-4px;bottom:-4px;width:2px;background:#e11d48}
+.task{display:block;border:1px solid var(--bd);border-radius:10px;padding:10px 12px;margin:8px 0;cursor:pointer}
+.task input{margin-right:8px;accent-color:var(--ok)}.task span{display:block;color:var(--mu);font-size:.92rem;margin:4px 0 0 24px}
+.task.d{border-color:var(--ok)}
+.foot{display:flex;justify-content:space-between;gap:8px}
+.foot button,.cal button{background:var(--ac);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:inherit;cursor:pointer}
+.foot button.g{background:var(--card);color:var(--tx);border:1px solid var(--bd)}
+.cal{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.cal label{font-size:.85rem;color:var(--mu)}.cal input{width:100%;padding:8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);font:inherit}
+.scroll{overflow-x:auto}
+</style></head><body><div class="w">
+<div class="hero"><span class="tag">Free course · 7 stages</span><h1>📈 Meta Ads Academy</h1>
+<p class="mu">Follow one real-style case, <b>GlowLeaf</b> (a small Indian skincare brand), from a wasted ₹3,000 to profitable scaling. Each stage: how it works, what changed, and a hands-on task with guidance. Numbers are illustrative.</p>
+<div class="bar"><i id="pb"></i></div><small class="mu" id="pt"></small></div>
+<div class="nav" id="nav"></div>
+<div id="st"></div>
+<div class="card"><h2>🧮 Profit calculator</h2><p class="mu">Try your own numbers, or GlowLeaf's defaults.</p>
+<div class="cal"><div><label>Price ₹</label><input id="p" type="number" value="599"></div><div><label>Product + shipping cost ₹</label><input id="c" type="number" value="250"></div><div><label>Daily ad spend ₹</label><input id="s" type="number" value="1000"></div><div><label>ROAS</label><input id="r" type="number" step="0.1" value="2.4"></div></div>
+<p id="co" style="margin-top:12px"></p></div>
+<p class="mu" style="text-align:center"><small>Meta's menus and policies change often; check the current Ads Manager while following along.</small></p>
+</div>
+<script>
+const M=[[210,.5,null,0],[210,.5,1500,.4],[190,.9,856,.7],[160,1.1,600,1],[150,2.1,333,1.8],[145,2.3,250,2.4],[155,2.0,240,2.5]];
+const S=[
+{t:"How Meta Ads Works",lv:"Basic",
+c:"Meta sells attention on Facebook, Instagram, Messenger and WhatsApp through an <b>auction</b>. You don't just win by paying most: the winner has the best <i>Total Value</i> = your bid + how likely the person is to act + ad quality. A relevant ad can beat a bigger budget.<br><br><b>Structure:</b> Campaign (goal) → Ad Set (who, where, budget) → Ad (what they see).",
+rt:["Priya opens Instagram at 9 pm.","Meta finds every ad eligible to show her.","In milliseconds it scores each one (bid × action rate × quality).","GlowLeaf wins; the ad appears. You pay per 1,000 views (CPM).","She clicks, lands on your site, and Meta watches what she does next."],
+cs:"GlowLeaf sells a Neem-Tulsi face wash at ₹599 (cost + shipping ₹250, so profit ₹349; <b>break-even ROAS 1.7</b>). The owner tapped <b>Boost Post</b> at ₹500/day for 6 days: ₹3,000 spent, hundreds of likes, no known sales. Why? Objective was Engagement, nothing was tracked, targeting was random.",
+ch:"Nothing improved yet, but now we know the problem: likes ≠ sales, and we can't see results.",
+tk:[["Find your break-even ROAS","Price ÷ (price − product cost − shipping). Anything above it is profit."],["Draw Campaign → Ad Set → Ad for your business","Write the goal, the audience and 3 ad ideas on paper."],["Spy on 3 competitors","Open facebook.com/ads/library, search competitors, note hooks and offers of ads running 30+ days (long-running usually means profitable)."]]},
+{t:"Foundations & Tracking",lv:"Basic",
+c:"Before spending, set up: <b>Business Portfolio</b> (Business Manager), Facebook Page + Instagram, ad account with payment, <b>domain verification</b>, and the <b>Meta Pixel + Conversions API (CAPI)</b>. The Pixel is a code on your site that reports actions (ViewContent, AddToCart, InitiateCheckout, <b>Purchase</b>). CAPI sends the same events from your server so ad blockers and iOS privacy don't hide them.",
+rt:["Buyer clicks your ad and views the product (ViewContent).","Adds to cart, starts checkout.","Pays ₹599. Pixel + CAPI send Purchase with value ₹599.","Meta learns what buyers have in common and finds similar people."],
+cs:"GlowLeaf's Shopify store gets the Meta app: Pixel + CAPI connected, domain verified. Events now flow.",
+ch:"Meta now sees purchases: 2 sales from the same test, CPA ₹1,500, ROAS 0.4. Still losing, but measurable. You can't fix what you can't see.",
+tk:[["Create Business Portfolio, Page, ad account","business.facebook.com → Create account. Use a business email, add payment."],["Install Pixel + CAPI","Shopify/WooCommerce: use the official Meta/Facebook channel app. Custom site: Events Manager → Connect data → Web."],["Verify events","Events Manager → Test Events. Open your site, add to cart and check the events appear. Aim for Good/Great event match quality."]]},
+{t:"Campaigns, Objectives & Budget",lv:"Basic → Intermediate",
+c:"Objective tells Meta what to hunt for. Choose <b>Sales</b> (conversion on website, optimize for <b>Purchase</b>) for e-commerce, <b>Leads</b> for forms, <b>Engagement</b> only for awareness. Meta needs ~50 conversions/week per ad set to exit the <b>learning phase</b>. Keep structure simple: fewer ad sets = more data each. Use Advantage+ placements (let Meta choose Reels, Feed, Stories).",
+rt:["You pick Sales → Purchase.","Meta looks for people who behave like past buyers.","Learning phase: results are unstable for a few days.","Stable delivery begins once enough purchases are logged."],
+cs:"Rebuilt as 1 Sales campaign, 1 ad set, 3 ads, ₹600/day, Advantage+ placements. Old Boost Post stopped.",
+ch:"Meta now optimises for buyers, not likers. ROAS 0.4 → 0.7, CPA ₹1,500 → ₹856.",
+tk:[["Create a Sales campaign","Ads Manager → Create → Sales → Website → Purchase. Name it: Sales | Product | Date."],["Set budget by CPA","Daily budget ≥ 2–3× your expected CPA. If CPA ≈ ₹600, start ₹1,200+, or ₹600 with patience."],["Launch and don't touch for 3 days","Editing resets learning. Just watch."]]},
+{t:"Audiences",lv:"Intermediate",
+c:"Types: <b>Broad / Advantage+ audience</b> (age + country only; Meta finds buyers using your data), <b>Interests</b> (skincare, Ayurveda), <b>Custom</b> (site visitors, video viewers, IG engagers, customer list), <b>Lookalike</b> (people similar to your buyers, 1% = closest). Today, targeting works best as a <i>suggestion</i>, and creative acts as the real targeting.",
+rt:["You upload 400 buyer emails/phones.","Meta matches them to accounts (hashed, private).","It builds a 1% Lookalike of similar people.","Ads show to them first; the Pixel refines it further."],
+cs:"Tested 3 ad sets: Broad (women 22–40), Interest (skincare + Ayurveda), 1% Lookalike of buyers. Same ad in each.",
+ch:"Lookalike won on CPA, broad close behind. CPM fell ₹190 → ₹160, ROAS 1.0 (~break-even 1.7 still ahead).",
+tk:[["Build a customer list","Export buyers from your store (CSV) → Audiences → Create → Custom → Customer list."],["Make a 1% Lookalike","Audiences → Create → Lookalike → source = customer list, country India, 1%."],["Run a clean test","3 ad sets, identical ad and budget. Judge after ~₹2,000 spend each or 50 clicks, not after one day."]]},
+{t:"Creative: Your Biggest Lever",lv:"Intermediate",
+c:"Creative drives most of your results. Every ad needs: a <b>hook</b> (first 3 seconds), the problem, the proof, a clear offer, a <b>CTA</b>. Best formats: 9:16 Reels/Stories video (UGC style, 15–30 s), static with a bold claim, carousel for ranges. Test <i>concepts</i> (different angles), not tiny tweaks like button colour.",
+rt:["User scrolls fast; you have ~2 seconds.","Hook stops the thumb (problem/curiosity).","Proof + demo builds trust.","Offer + CTA gets the click."],
+cs:"Replaced the plain product photo with 3 phone-shot UGC videos: 'Oily skin in humid weather?', 'I tried it 14 days', 'Dermat-style ingredient breakdown'. Added COD + free shipping in copy.",
+ch:"CTR 1.1% → 2.1%, CPA ₹600 → ₹333, ROAS 1.8 (now above break-even 1.7).",
+tk:[["Write 5 hooks","Formulas: Problem ('Tired of…?'), Result ('Day 14 vs Day 1'), Curiosity ('Why dermats…'), Proof ('10,000+ sold')."],["Shoot 3 UGC videos","Phone, natural light, 15–30 s: hook → problem → product in use → offer → CTA. Add captions."],["Launch 3 concepts in one ad set","Check hook rate (3-sec views ÷ impressions; 25%+ is good) and CTR after 2–3 days."]]},
+{t:"Analyse & Optimise",lv:"Advanced",
+c:"Read the funnel: <b>CPM → CTR → CPC → Add-to-cart → Conversion rate → CPA → ROAS</b>. Diagnose: high CPM = weak creative/audience; low CTR = weak hook/offer; good CTR but few sales = landing page, price, or trust problem; high CPA but decent CVR = expensive traffic. Rules: wait for data, pause ads that spend 2× CPA with no sale, keep winners, then make one change at a time.",
+rt:["Open Ads Manager, breakdown by ad.","Find the step where people drop.","Fix that step only.","Wait 3–4 days; compare."],
+cs:"Data showed strong CTR but 60% cart abandonment at checkout. Fixes: added COD/UPI, trust badges, reviews on product page, faster mobile load. Paused 2 weak ads.",
+ch:"Conversion rate rose, CPA ₹333 → ₹250, ROAS 2.4: <b>profitable</b> (each ₹1 in brings ₹2.4 back; break-even 1.7).",
+tk:[["Add columns","Ads Manager → Columns → add CPM, CTR (link), CPC, Add to cart, Purchases, Cost per purchase, ROAS, Frequency."],["Diagnose one ad","Use the rule above to name the weakest funnel step, then write one fix."],["Apply and wait","Change one thing (e.g., checkout payment options). Note the date and re-check after 4 days."]]},
+{t:"Scaling & Advanced Systems",lv:"Advanced",
+c:"Only scale what's profitable. <b>Vertical</b>: raise budget ~20% every 3 days. <b>Horizontal</b>: duplicate winning ads into new audiences/creatives. Add a funnel: <b>prospecting</b> (cold) + <b>retargeting</b> (site visitors, video viewers, 7–30 days). Try <b>Advantage+ sales campaigns</b> and CBO. Watch <b>frequency</b> (above ~3 on cold = creative fatigue); refresh creatives every 2–3 weeks. Build a weekly test routine: 3 new creatives, 1 new offer.",
+rt:["Winner found at profitable ROAS.","Budget +20% every 3 days.","Retargeting catches non-buyers cheaply.","New creatives replace tired ones.","Repeat weekly."],
+cs:"Over 5 weeks GlowLeaf moved ₹600 → ₹5,000/day, added a 7-day retargeting ad set and a bundle offer (2 for ₹999), and shot 3 new videos every 2 weeks.",
+ch:"At ₹5,000/day ROAS holds ~2.5, CPA ₹240. Set spend 5000 and ROAS 2.5 in the calculator below to see the daily profit.",
+tk:[["Scale one winner","Increase budget 20% every 3 days. If ROAS drops below break-even for 3 days, step back 20%."],["Build retargeting","Custom audience: site visitors 7 days minus purchasers. Ad: reviews + offer + urgency."],["Set your weekly routine","Mon: review data. Tue–Wed: shoot creatives. Thu: launch tests. Fri: cut losers. Keep a test log."]]}
+];
+let cur=0,dn={};
+try{dn=JSON.parse(localStorage.getItem("mad")||"{}")}catch(e){}
+const $=id=>document.getElementById(id);
+function sv(){try{localStorage.setItem("mad",JSON.stringify(dn))}catch(e){}}
+function prog(){let t=0,d=0;S.forEach((s,i)=>s.tk.forEach((_,j)=>{t++;if(dn[i+"-"+j])d++}));$("pb").style.width=(100*d/t)+"%";$("pt").textContent=d+" of "+t+" tasks done"}
+function tog(i,j){dn[i+"-"+j]=!dn[i+"-"+j];sv();show(i,1)}
+function go(i){cur=i;show(i);window.scrollTo(0,0)}
+function show(i,keep){
+ const s=S[i],m=M[i],p=i?M[i-1]:null;
+ const k=(l,v,f,inv)=>{let x=f(v),dl="";if(p&&p[inv[0]]!=null&&v!=null){const a=v-p[inv[0]];if(a)dl=`<small class="up">${a>0?"▲":"▼"} from ${f(p[inv[0]])}</small>`}return `<div><small>${l}</small><b>${x}</b>${dl}</div>`};
+ $("nav").innerHTML=S.map((x,n)=>`<button class="${n==i?"on":""}" onclick="go(${n})">${n+1}. ${x.t.split(" ")[0]}</button>`).join("");
+ $("st").innerHTML=`<div class="card"><span class="tag">Stage ${i+1} · ${s.lv}</span><h2>${s.t}</h2><p>${s.c}</p>
+ <h3>How it works in real time</h3><ol class="rt">${s.rt.map(x=>`<li>${x}</li>`).join("")}</ol></div>
+ <div class="card case"><h3 style="margin-top:0">GlowLeaf case</h3><p>${s.cs}</p></div>
+ <div class="card"><h3 style="margin-top:0">Before → after this stage</h3>
+ <div class="kp">${k("CPM","₹"+m[0],()=>"₹"+m[0],[0]).replace(/./,c=>c)}${k("CTR",m[1],v=>v+"%",[1])}${k("CPA",m[2],v=>v==null?"unknown":"₹"+v,[2])}${k("ROAS",m[3],v=>v==null?"–":v+"x",[3])}</div>
+ <div class="roas"><i style="width:${Math.min(100,m[3]/3*100)}%"></i><u style="left:${1.7/3*100}%"></u></div><small class="mu">Bar = ROAS out of 3x. Red line = break-even 1.7x.</small><p style="margin-top:10px">${s.ch}</p></div>
+ <div class="card"><h3 style="margin-top:0">Practical task</h3>${s.tk.map((t,j)=>`<label class="task ${dn[i+"-"+j]?"d":""}"><input type="checkbox" ${dn[i+"-"+j]?"checked":""} onchange="tog(${i},${j})"><b>${t[0]}</b><span>${t[1]}</span></label>`).join("")}</div>
+ <div class="foot"><button class="g" onclick="go(${Math.max(0,i-1)})" ${i?"":"disabled"}>← Back</button><button onclick="go(${Math.min(6,i+1)})">${i<6?"Next stage →":"Finish 🎉"}</button></div>`;
+ prog();
+}
+function calc(){const p=+$("p").value,c=+$("c").value,s=+$("s").value,r=+$("r").value,mg=p-c,be=mg>0?p/mg:0,rev=s*r,pr=rev-s-(rev/p)*c;
+ $("co").innerHTML=`Break-even ROAS: <b>${be.toFixed(2)}x</b>. Sales/day: <b>${(rev/p).toFixed(1)}</b>. Estimated daily profit: <b style="color:${pr>=0?"var(--ok)":"#e11d48"}">₹${Math.round(pr).toLocaleString("en-IN")}</b>`}
+["p","c","s","r"].forEach(x=>$(x).oninput=calc);calc();show(0);
+</script></body></html>
